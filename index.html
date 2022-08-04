@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Home</title>
+</head>
+<body>
+    <div class="header">
+        <h1>toMateColl</h1>
+    </div>
+    <button class="botonAbrir" id="botonAbrir" onclick="add()">X</button>
+        <div class="hi" id="hi">
+             <span class="close">&times;</span><br><br>
+             <div class="container">
+                 <p class="cuadrado">Tu monto actual es de $<span id="montoActual"></span></p>
+             </div>
+             <div class="container2">
+                 <button>
+                     <img onclick="clearBoton(),borrarLista()" class="cuadrado2" id="borrarLista" src="Img/bxs-trash-alt.png" >
+                 </button>
+                 <button onclick="finCompra(),clearBoton(),borrarLista()" class="cuadrado3">Comprar</button>
+             </div>
+             <div class="tablon">
+                 <table>
+                     <thead class="tablaProductos">
+                         <tr>
+                             <td><b>Lista de Productos</b></td>
+                         </tr>
+                         <tbody class="tabla">
+                         </tbody>
+                     </thead>
+                 </table>
+            </div>
+         </div>
+         <div class="content">
+             <div class="sectionIdea">
+                 <div class="image"><img src="Img/Mate.jpg"></div>
+                 <div class="meta">
+                     <h3><b>Mate</b></h3>
+                     <p>Mate camionero de calabaza</p>
+                     <p class="precio"><b>$2500</b></p>
+                     <p class="addBoton" onclick="siQuieres(mate0), actual(), tablaLista(mate0.nombre)"><b>Añadir al carrito</b></p>
+                    </div>
+                </div>
+                <div class="sectionIdea">
+                    <div class="image"><img src="Img/termo.jpg"></div>
+                    <div class="meta">
+                        <h3><b>Termo</b></h3>
+                        <p>Termo media manija de metal</p>
+                        <p class="precio"><b>$3500</b></p>
+                        <p class="addBoton" onclick="siQuieres(termo0), actual(), tablaLista(termo0.nombre)"><b>Añadir al carrito</b></p>
+                    </div>
+                </div>
+                <div class="sectionIdea">
+                    <div class="image"><img src="Img/BOMBILLA.jpg"></div>
+                    <div class="meta">
+                        <h3><b>Bombilla</b></h3>
+                  <p>Bombilla de acero estilo cuchara</p>
+                  <p class="precio"><b>$600</b></p>
+                  <p class="addBoton" onclick="siQuieres(bombilla0), actual(), tablaLista(bombilla0.nombre)"><b>Añadir al carrito</b></p>
+                </div>
+            </div>
+        </div>
+        <script src="javascript.js" ></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    </body>
+</html>

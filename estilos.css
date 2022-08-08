@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&family=Roboto+Mono:wght@300;500&display=swap');
 
 * {
+    font-family: 'Quicksand', sans-serif;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -72,7 +73,6 @@ body {
 }
 
 h1{
-    font-family: 'Quicksand', sans-serif;
     color: #535353;
 }
 
@@ -81,12 +81,10 @@ h3 {
     font-size: 16px;
     line-height: 20px;
     margin-bottom: 2px;
-    font-family: 'Quicksand', sans-serif;
     color: #535353;
 }
 
 p{
-    font-family: 'Quicksand', sans-serif;
     color: #5f5f5f;
 }
 
@@ -141,7 +139,6 @@ p{
 }
 
 .tablon{
-    font-family: 'Quicksand', sans-serif;
     position: fixed;
     display: flex;
     padding: 20px 100px 20px 20px;
@@ -156,7 +153,6 @@ p{
 }
 
 .cuadrado3{
-    font-family: 'Quicksand', sans-serif;
     border: none;
     font-weight: bold;
     border-radius: 5px;
@@ -173,7 +169,6 @@ p{
 }
 
 .botonAbrir{
-    font-family: 'Quicksand', sans-serif;
     font-weight: bold;
     display: none;
     padding: 10px 20px;

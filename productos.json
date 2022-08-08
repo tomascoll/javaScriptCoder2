@@ -1,0 +1,17 @@
+[
+    {
+        "nombre" : "MATE COMUN",
+        "precio" : "$2500",
+        "descripcion" : "Mate Camionero de calabaza forrado con cuero. "
+    },
+    {
+        "nombre" : "TERMO MEDIA MANIJA",
+        "precio" : "$3500",
+        "descripcion" : "Termo Media Manija de Acero con capacidad de 1 Litro. "
+    },
+    {
+        "nombre" : "BOMBILLA CUCHARA",
+        "precio" : "$600",
+        "descripcion" : "Bombilla Cuchara de metal. "
+    }
+]

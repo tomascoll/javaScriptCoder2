@@ -101,7 +101,7 @@ p{
 .addBoton:hover{
     transition: .5s;
     background-color: #444444;
-    cursor: default;
+    cursor: pointer;
 }
 
 .precio{

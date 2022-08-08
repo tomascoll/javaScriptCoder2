@@ -45,7 +45,6 @@ function tablaLista(a){
         <td id="borrar">-${a}</td>
         `
     tabla.append(filaTabla);
-    console.log(listaProductos)
     }
 
 function finCompra(){
@@ -95,31 +94,50 @@ window.onclick = function(event) {
 }
 
 class Mates{
-    constructor(nombre, material, forrado, tipo, precio){
+    constructor(nombre,precio){
         this.nombre = nombre.toUpperCase();
-        this.material = material.toUpperCase();
-        this.forrado = forrado.toUpperCase();
-        this.tipo = tipo.toUpperCase(); 
         this.precio = parseFloat(precio); 
     }
 }
-const mate0 = new Mates('Mate Comun' , 'Calabaza',  'Cuero oscuro', 'Camionero', '2500');
+const mate0 = new Mates('Mate Comun', '2500');
 
 class Termos{
-    constructor(nombre, material, capacidad, precio){
+    constructor(nombre,precio){
     this.nombre = nombre.toUpperCase();
-    this.material = material.toUpperCase();
-    this.capacidad = capacidad.toUpperCase();
     this.precio = parseFloat(precio); 
     }
 }
-const termo0 = new Termos('Termo Media Manija', 'Metal', '1 Litro', '3500');
+const termo0 = new Termos('Termo Media Manija','3500');
 
 class Bombilla{
-    constructor(nombre, material, precio){
+    constructor(nombre,precio){
     this.nombre = nombre.toUpperCase();
-    this.material = material.toUpperCase();
     this.precio = parseFloat(precio); 
     }
 }
-const bombilla0 = new Bombilla('Bombilla Cuchara', 'Metal', '600');
+const bombilla0 = new Bombilla('Bombilla Cuchara','600');
+
+
+fetch('productos.json')
+.then( (res) => res.json())
+.then( (data) => { 
+        const lista = document.querySelector('#fetch')
+        const lista2 = document.querySelector('#fetchDos')
+        const lista3 = document.querySelector('#fetchTres')
+        const lista4 = document.querySelector('#titulo')
+        const lista5 = document.querySelector('#titulo2')
+        const lista6 = document.querySelector('#titulo3')
+        const lista7 = document.querySelector('#preciofetch')
+        const lista8 = document.querySelector('#preciofetch2')
+        const lista9 = document.querySelector('#preciofetch3')
+        lista.innerHTML= data[0].descripcion;
+        lista2.innerHTML= data[1].descripcion;
+        lista3.innerHTML= data[2].descripcion;
+        lista4.innerHTML= data[0].nombre;
+        lista5.innerHTML= data[1].nombre;
+        lista6.innerHTML= data[2].nombre;
+        lista7.innerHTML= data[0].precio;
+        lista8.innerHTML= data[1].precio;
+        lista9.innerHTML= data[2].precio;
+    })
+

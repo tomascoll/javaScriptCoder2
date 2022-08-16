@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,69 +9,73 @@
     <link rel="stylesheet" href="estilos.css">
     <title>Home</title>
 </head>
+
 <body>
     <div class="header">
         <h1>toMateColl</h1>
     </div>
     <button class="botonAbrir" id="botonAbrir" onclick="add()">X</button>
-        <div class="hi" id="hi">
-             <span class="close">&times;</span><br><br>
-             <div class="container">
-                 <p class="cuadrado">Tu monto actual es de $<span id="montoActual"></span></p>
-             </div>
-             <div class="container2">
-                 <button>
-                     <img onclick="clearBoton(),borrarLista()" class="cuadrado2" id="borrarLista" src="Img/bxs-trash-alt.png" >
-                 </button>
-                 <button onclick="finCompra(),clearBoton(),borrarLista()" class="cuadrado3">Comprar</button>
-             </div>
-             <div class="tablon">
-                 <table>
-                     <thead class="tablaProductos">
-                         <tr>
-                             <td><b>Lista de Productos</b></td>
-                         </tr>
-                         <tbody class="tabla">
-                         </tbody>
-                     </thead>
-                 </table>
-            </div>
-         </div>
-         <div class="content">
-             <div class="sectionIdea">
-
-                 <div class="image"><img src="Img/Mate.jpg"></div>
-                 <div class="meta">
-                     <h3><b id="titulo"></b></h3>
-                     <p id="fetch"></p>
-                     <p class="precio"><b id="preciofetch"></b></p>
-                     <p class="addBoton" onclick="siQuieres(mate0), actual(), tablaLista(mate0.nombre)"><b>Añadir al carrito</b></p>
-                    </div>
-                </div>
-
-                <div class="sectionIdea">
-                    <div class="image"><img src="Img/termo.jpg"></div>
-                    <div class="meta">
-                        <h3><b id="titulo2"></b></h3>
-                        <p id="fetchDos"></p>
-                        <p class="precio"><b id="preciofetch2"></b></p>
-                        <p class="addBoton" onclick="siQuieres(termo0), actual(), tablaLista(termo0.nombre)"><b>Añadir al carrito</b></p>
-                    </div>
-                </div>
-
-                <div class="sectionIdea">
-                    <div class="image"><img src="Img/BOMBILLA.jpg"></div>
-                    <div class="meta">
-                        <h3><b id="titulo3"></b></h3>
-                  <p id="fetchTres"></p>
-                  <p class="precio"><b id="preciofetch3"></b></p>
-                  <p class="addBoton" onclick="siQuieres(bombilla0), actual(), tablaLista(bombilla0.nombre)"><b>Añadir al carrito</b></p>
-                </div>
-
+    <div class="hi" id="hi">
+        <span class="close">&times;</span><br><br>
+        <div class="container">
+            <p class="cuadrado">Tu monto actual es de $<span id="montoActual"></span></p>
+        </div>
+        <div class="container2">
+            <button>
+                <img onclick="clearBoton(),borrarLista()" class="cuadrado2" id="borrarLista"
+                    src="Img/bxs-trash-alt.png">
+            </button>
+            <button onclick="finCompra(),clearBoton(),borrarLista()" class="cuadrado3">Comprar</button>
+        </div>
+        <div class="tablon">
+            <table>
+                <thead class="tablaProductos">
+                    <tr>
+                        <td><b>Lista de Productos</b></td>
+                    </tr>
+                <tbody class="tabla">
+                </tbody>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <div class="content">
+        <div class="sectionIdea">
+            <div class="image"><img src="Img/Mate.jpg"></div>
+            <div class="meta">
+                <h3><b id="titulo"></b></h3>
+                <p id="descripcionProducto"></p>
+                <p class="precio"><b id="precio"></b></p>
+                <p class="addBoton" onclick="siQuieres(mate0), actual(), tablaLista(mate0.nombre)"><b>Añadir al
+                        carrito</b></p>
             </div>
         </div>
-        <script src="javascript.js" ></script>
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    </body>
+        <div class="sectionIdea">
+            <div class="image"><img src="Img/termo.jpg"></div>
+            <div class="meta">
+                <h3><b id="titulo"></b></h3>
+                <p id="descripcionProducto"></p>
+                <p class="precio"><b id="precio"></b></p>
+                <p class="addBoton" onclick="siQuieres(termo0), actual(), tablaLista(termo0.nombre)"><b>Añadir al
+                        carrito</b></p>
+            </div>
+        </div>
+
+        <div class="sectionIdea">
+            <div class="image"><img src="Img/BOMBILLA.jpg"></div>
+            <div class="meta">
+                <h3><b id="titulo"></b></h3>
+                <p id="descripcionProducto"></p>
+                <p class="precio"><b id="precio"></b></p>
+                <p class="addBoton" onclick="siQuieres(bombilla0), actual(), tablaLista(bombilla0.nombre)"><b>Añadir al
+                        carrito</b></p>
+            </div>
+
+        </div>
+    </div>
+    <script src="javascript.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+
 </html>

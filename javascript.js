@@ -56,6 +56,7 @@ function localPintar(a){
     for (let a of listaProductos){
         let tabla = document.querySelector(".tabla");
         let filaTabla = document.createElement("tr");
+        filaTabla.setAttribute('id', 'borrar');
         filaTabla.innerHTML = `
         <td id="borrar">-${a}</td>
         `
@@ -68,10 +69,14 @@ function localPintar(a){
     !aux ? listaProductos = [] : listaProductos = JSON.parse(aux), localPintar(listaProductos);
 
 function borrarLista(){
-    do{
-        let tablas = document.getElementById('borrar')
-        tablas.remove();
-    }while (tablas =! 0);
+    let tablas = document.querySelectorAll('#borrar')
+    let count = 0;
+    for (item of tablas ){
+        if(count >= 0){
+            item.remove();
+        }
+        count += 1;
+    }
 }
 
 var modal = document.getElementById("hi");
@@ -121,23 +126,40 @@ const bombilla0 = new Bombilla('Bombilla Cuchara','600');
 fetch('productos.json')
 .then( (res) => res.json())
 .then( (data) => { 
-        const lista = document.querySelector('#fetch')
-        const lista2 = document.querySelector('#fetchDos')
-        const lista3 = document.querySelector('#fetchTres')
-        const lista4 = document.querySelector('#titulo')
-        const lista5 = document.querySelector('#titulo2')
-        const lista6 = document.querySelector('#titulo3')
-        const lista7 = document.querySelector('#preciofetch')
-        const lista8 = document.querySelector('#preciofetch2')
-        const lista9 = document.querySelector('#preciofetch3')
-        lista.innerHTML= data[0].descripcion;
-        lista2.innerHTML= data[1].descripcion;
-        lista3.innerHTML= data[2].descripcion;
-        lista4.innerHTML= data[0].nombre;
-        lista5.innerHTML= data[1].nombre;
-        lista6.innerHTML= data[2].nombre;
-        lista7.innerHTML= data[0].precio;
-        lista8.innerHTML= data[1].precio;
-        lista9.innerHTML= data[2].precio;
-    })
 
+    lectorTitulo = document.querySelectorAll('#titulo');
+    lectorDescrip = document.querySelectorAll('#descripcionProducto');
+    lectorPrecio = document.querySelectorAll('#precio');
+    
+    const myArray = data;
+
+    myArray.map( (data) => {
+        const titulo = data.nombre;
+        const descripcion = data.descripcion;
+        const precio = data.precio;
+
+        if(titulo === "MATE COMUN"){
+            lectorTitulo[0].innerHTML = titulo;
+        }else if (titulo ==="TERMO MEDIA MANIJA"){
+            lectorTitulo[1].innerHTML = titulo;
+        }else if(titulo ==="BOMBILLA CUCHARA"){
+            lectorTitulo[2].innerHTML = titulo;
+        }
+
+        if(descripcion === "Mate Camionero de calabaza forrado con cuero. "){
+            lectorDescrip[0].innerHTML = descripcion;
+        }else if (descripcion === "Termo Media Manija de Acero con capacidad de 1 Litro. "){
+            lectorDescrip[1].innerHTML = descripcion;
+        }else if(descripcion ==="Bombilla Cuchara de metal. "){
+            lectorDescrip[2].innerHTML = descripcion;
+        }
+
+        if(precio === "$2500"){
+            lectorPrecio[0].innerHTML = precio;
+        }else if (precio === "$3500"){
+            lectorPrecio[1].innerHTML = precio;
+        }else if(precio ==="$600"){
+            lectorPrecio[2].innerHTML = precio;
+        }
+    })
+})

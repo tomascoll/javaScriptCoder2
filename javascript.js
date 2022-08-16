@@ -22,13 +22,12 @@ function actual(){
     localStorage.setItem('resultado', resultado)
     let montoActual = document.getElementById("montoActual");
     montoActual.innerHTML = resultado;
-    a = localStorage.getItem('resultado')
 }
 
 //LocalStorageNumeros----------------------
     let aux2 = localStorage.getItem('resultado')
     let resultado = 0;
-    !aux2 ? resultado : montoActual = document.getElementById("montoActual"), resultado = parseFloat(aux2), montoActual.innerHTML = parseFloat(resultado);
+    !aux2 ? resultado : resultado = parseFloat(aux2), montoActual.innerHTML = parseFloat(resultado);
 
 function clearBoton(){
     resultado = 0;
@@ -138,28 +137,17 @@ fetch('productos.json')
         const descripcion = data.descripcion;
         const precio = data.precio;
 
-        if(titulo === "MATE COMUN"){
-            lectorTitulo[0].innerHTML = titulo;
-        }else if (titulo ==="TERMO MEDIA MANIJA"){
-            lectorTitulo[1].innerHTML = titulo;
-        }else if(titulo ==="BOMBILLA CUCHARA"){
-            lectorTitulo[2].innerHTML = titulo;
-        }
-
-        if(descripcion === "Mate Camionero de calabaza forrado con cuero. "){
-            lectorDescrip[0].innerHTML = descripcion;
-        }else if (descripcion === "Termo Media Manija de Acero con capacidad de 1 Litro. "){
-            lectorDescrip[1].innerHTML = descripcion;
-        }else if(descripcion ==="Bombilla Cuchara de metal. "){
-            lectorDescrip[2].innerHTML = descripcion;
-        }
-
-        if(precio === "$2500"){
-            lectorPrecio[0].innerHTML = precio;
-        }else if (precio === "$3500"){
-            lectorPrecio[1].innerHTML = precio;
-        }else if(precio ==="$600"){
-            lectorPrecio[2].innerHTML = precio;
-        }
+        (titulo === "MATE COMUN") ? lectorTitulo[0].innerHTML = titulo :
+        (titulo ==="TERMO MEDIA MANIJA") ? lectorTitulo[1].innerHTML = titulo :
+        (titulo ==="BOMBILLA CUCHARA") ? lectorTitulo[2].innerHTML = titulo:
+        'Error';
+        (descripcion === "Mate Camionero de calabaza forrado con cuero. ") ? lectorDescrip[0].innerHTML = descripcion :
+        (descripcion === "Termo Media Manija de Acero con capacidad de 1 Litro. ") ? lectorDescrip[1].innerHTML = descripcion :
+        (descripcion ==="Bombilla Cuchara de metal. ") ? lectorDescrip[2].innerHTML = descripcion :
+        'Error';
+        (precio === "$2500") ? lectorPrecio[0].innerHTML = precio :
+        (precio === "$3500") ? lectorPrecio[1].innerHTML = precio :
+        (precio === "$600") ? lectorPrecio[2].innerHTML = precio :
+        'Error';
     })
 })
